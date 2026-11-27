@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اردو کا شجرہ | Urdu Ka Shajra — پرائمری MCQs ٹیسٹ ایپ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #14532d;
+      --primary-light: #166534;
+      --primary-soft: #dcfce7;
+      --accent: #d97706;
+      --accent-soft: #fef3c7;
+      --bg: #f4f7f5;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --danger: #b91c1c;
+      --danger-soft: #fee2e2;
+      --success: #15803d;
+      --success-soft: #dcfce7;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(20, 83, 45, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      min-height: 100vh;
+    }
+
+    body.ltr-mode {
+      direction: ltr;
+      font-family: 'Plus Jakarta Sans', 'Noto Nastaliq Urdu', sans-serif;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* Header & Brand */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-box {
+      width: 52px;
+      height: 52px;
+      background: #fff;
+      color: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .brand-tagline {
+      font-size: 0.88rem;
+      opacity: 0.92;
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-btn {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover, .nav-btn.active {
+      background: #fff;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Cards & Sections */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .badge-warn {
+      background: var(--accent-soft);
+      color: #92400e;
+    }
+
+    .badge-danger {
+      background: var(--danger-soft);
+      color: var(--danger);
+    }
+
+    /* Controls & Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .choice-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .choice-chip {
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.92rem;
+      transition: 0.2s;
+    }
+
+    .choice-chip.active {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .subject-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fafafa;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .subject-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      background: #f0fdf4;
+    }
+
+    .subject-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.82rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      background: #fff;
+      margin-top: 6px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Quiz UI */
+    .quiz-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .timer-box {
+      font-weight: 700;
+      color: var(--danger);
+      background: var(--danger-soft);
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+
+    .q-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .q-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .q-dot.current {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .q-dot.answered {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: inherit;
+      padding: 13px 16px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.96rem;
+      transition: 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background: #f9fafb;
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      font-weight: 700;
+    }
+
+    .option-btn.correct {
+      border-color: var(--success);
+      background: var(--success-soft);
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--danger);
+      background: var(--danger-soft);
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .explanation-box {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #f0f9ff;
+      border-inline-start: 4px solid #0284c7;
+      font-size: 0.92rem;
+    }
+
+    /* Progress & Chart */
+    .bar-track {
+      width: 100%;
+      height: 14px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--primary);
+      transition: width 0.4s ease;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      text-align: inherit;
+    }
+
+    th {
+      background: #f3f4f6;
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 14px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .brand-title { font-size: 1.12rem; }
+      .card { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <div class="brand">
+          <div class="logo-box">UKS</div>
+          <div>
+            <div class="brand-title">اردو کا شجرہ (Urdu Ka Shajra)</div>
+            <div class="brand-tagline">بہتر تعلیم، بہتر تیاری، روشن مستقبل — پرائمری MCQs ٹیسٹ پلیٹ فارم (جماعت 3 تا 5)</div>
+          </div>
+        </div>
+        <div>
+          <span class="badge" id="bankCountBadge">72 اصل سوالات فعال</span>
+        </div>
+      </div>
+
+      <nav class="nav-pills" id="mainNav">
+        <button class="nav-btn active" data-view="home" onclick="switchView('home')">ہوم / ٹیسٹ سیٹ اپ</button>
+        <button class="nav-btn" data-view="wrong" onclick="switchView('wrong')">غلط سوالات کی مشق (<span id="wrongCountNav">0</span>)</button>
+        <button class="nav-btn" data-view="student" onclick="switchView('student')">طالب علم ڈیش بورڈ</button>
+        <button class="nav-btn" data-view="admin" onclick="switchView('admin')">ایڈمن پینل</button>
+      </nav>
+    </header>
+
+    <!-- HOME / SETUP VIEW -->
+    <section id="view-home">
+      <div class="card">
+        <div class="section-title">خوش آمدید — اپنی جماعت، مضمون اور میڈیم منتخب کریں</div>
+        <p style="color: var(--muted); font-size: 0.93rem; margin-bottom: 14px;">
+          پنجاب پرائمری نصاب (PCTB / PECTAA SLOs) سے ہم آہنگ آن لائن پریکٹس اور موک ٹیسٹ سسٹم۔ یہ ایک آزاد تعلیمی پریکٹس پلیٹ فارم ہے، سرکاری ایپ نہیں۔
+        </p>
+
+        <div class="grid-2" style="margin-bottom: 14px;">
+          <div>
+            <label><strong>طالب علم کا نام:</strong></label>
+            <input type="text" id="studentNameInput" placeholder="مثلاً: علی رضا / Ali Raza" />
+          </div>
+          <div>
+            <label><strong>ٹیسٹ موڈ منتخب کریں:</strong></label>
+            <div class="choice-group">
+              <button class="choice-chip active" id="mode-practice" onclick="setTestMode('practice')">Practice Mode (مشق)</button>
+              <button class="choice-chip" id="mode-mock" onclick="setTestMode('mock')">Mock Test (ٹائمر کے ساتھ)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 14px;">
+          <div>
+            <label><strong>جماعت منتخب کریں:</strong></label>
+            <div class="choice-group" id="classSelector"></div>
+          </div>
+          <div>
+            <label><strong>میڈیم منتخب کریں:</strong></label>
+            <div class="choice-group" id="mediumSelector">
+              <button class="choice-chip active" data-med="urdu" onclick="setMedium('urdu')">اردو میڈیم (RTL)</button>
+              <button class="choice-chip" data-med="english" onclick="setMedium('english')">English Medium (LTR)</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label><strong>مضمون منتخب کریں:</strong></label>
+          <div class="grid-4" id="subjectCards" style="margin-top: 8px;"></div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+          <button class="btn btn-primary" onclick="startSelectedTest()">Start Test شروع کریں</button>
+          <button class="btn btn-outline" onclick="switchView('wrong')">Wrong Answers Practice</button>
+          <button class="btn btn-outline" onclick="switchView('student')">My Results / Dashboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ VIEW -->
+    <section id="view-quiz" class="hidden">
+      <div class="card">
+        <div class="quiz-meta">
+          <div>
+            <strong id="quizHeaderTitle">ٹیسٹ</strong>
+            <span class="badge" id="quizModeBadge">Practice</span>
+          </div>
+          <div>
+            <span id="qCounterText">سوال 1 از 1</span> |
+            <span id="qRemainingText">باقی: 0</span>
+          </div>
+          <div class="timer-box hidden" id="timerBox">وقت: <span id="timerDisplay">10:00</span></div>
+        </div>
+
+        <div class="q-nav" id="questionNavDots"></div>
+
+        <div style="margin-bottom: 8px;">
+          <span class="badge" id="qTopicBadge">موضوع</span>
+          <span class="badge badge-warn" id="qSloBadge">SLO</span>
+          <span class="badge" id="qDiffBadge">Easy</span>
+        </div>
+
+        <h3 id="questionText" style="font-size: 1.15rem; margin-bottom: 14px;"></h3>
+        <div id="optionsContainer"></div>
+        <div id="instantFeedback" class="explanation-box hidden"></div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 18px;">
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-outline" onclick="prevQuestion()">پچھلا / Previous</button>
+            <button class="btn btn-outline" onclick="nextQuestion()">اگلا / Next</button>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-outline" onclick="switchView('home')">منسوخ کریں</button>
+            <button class="btn btn-accent" onclick="submitQuiz()">Submit Test جمع کروائیں</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULT VIEW -->
+    <section id="view-result" class="hidden">
+      <div class="card">
+        <div class="section-title">ٹیسٹ کا نتیجہ اور کارکردگی (Result Summary)</div>
+        <div id="resultSummaryInfo" class="grid-2" style="margin-bottom: 16px;"></div>
+
+        <div style="margin-bottom: 18px;">
+          <div style="display:flex; justify-content:space-between; font-weight:700;">
+            <span>حاصل کردہ فیصد</span>
+            <span id="resultPercentLabel">0%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" id="resultPercentBar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div id="weakAreasBox" class="explanation-box" style="margin-bottom: 16px;"></div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 18px;">
+          <button class="btn btn-primary" onclick="startSelectedTest()">دوبارہ ٹیسٹ دیں</button>
+          <button class="btn btn-danger" onclick="startWrongAnswersTest()">Wrong Answers Only ٹیسٹ</button>
+          <button class="btn btn-outline" onclick="switchView('home')">ہوم پیج پر جائیں</button>
+        </div>
+
+        <div class="section-title">سوالات کا تفصیلی جائزہ</div>
+        <div id="resultDetailsList"></div>
+      </div>
+    </section>
+
+    <!-- WRONG ANSWERS VIEW -->
+    <section id="view-wrong" class="hidden">
+      <div class="card">
+        <div class="section-title">غلط سوالات کی مشق (Wrong Answers Learning System)</div>
+        <p style="color: var(--muted); margin-bottom: 12px;">
+          یہاں آپ کے غلط کیے گئے سوالات محفوظ ہیں تاکہ آپ دوبارہ سمجھ کر حل کر سکیں۔
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+          <button class="btn btn-danger" onclick="startWrongAnswersTest()">Wrong Answers Only ٹیسٹ شروع کریں</button>
+          <button class="btn btn-outline" onclick="clearWrongAnswers()">فہرست صاف کریں</button>
+        </div>
+        <div id="wrongListContainer"></div>
+      </div>
+    </section>
+
+    <!-- STUDENT DASHBOARD VIEW -->
+    <section id="view-student" class="hidden">
+      <div class="card">
+        <div class="section-title">طالب علم ڈیش بورڈ (Student Dashboard)</div>
+        <div class="grid-4" id="studentStatsCards" style="margin-bottom: 16px;"></div>
+        <div class="section-title">سابقہ ٹیسٹوں کی تاریخ</div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>تاریخ</th>
+                <th>طالب علم</th>
+                <th>جماعت</th>
+                <th>مضمون</th>
+                <th>میڈیم</th>
+                <th>اسکور</th>
+                <th>فیصد</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN PANEL VIEW -->
+    <section id="view-admin" class="hidden">
+      <div class="card" id="adminLockCard">
+        <div class="section-title">ایڈمن لاگ اِن (Admin Panel)</div>
+        <p style="color: var(--muted); margin-bottom: 10px;">سوالات، جماعتوں، مضامین اور ڈیٹا کے انتظام کے لیے پاس کوڈ درج کریں (ڈیفالٹ: <code>1234</code>)۔</p>
+        <div style="max-width: 320px;">
+          <input type="password" id="adminPinInput" placeholder="پاس کوڈ درج کریں" />
+          <button class="btn btn-primary" style="margin-top: 10px;" onclick="unlockAdmin()">ان لاک کریں</button>
+        </div>
+      </div>
+
+      <div id="adminWorkspace" class="hidden">
+        <div class="card">
+          <div class="section-title">نئی جماعت اور نیا مضمون شامل کریں</div>
+          <div class="grid-2">
+            <div>
+              <label>نئی جماعت (مثلاً: جماعت ششم / Class 6):</label>
+              <input type="text" id="newClassInput" placeholder="جماعت ششم" />
+              <button class="btn btn-sm btn-primary" style="margin-top: 8px;" onclick="addNewClass()">جماعت شامل کریں</button>
+            </div>
+            <div>
+              <label>نیا مضمون (مثلاً: اسلامیات / Islamiat):</label>
+              <input type="text" id="newSubjectInput" placeholder="اسلامیات" />
+              <button class="btn btn-sm btn-primary" style="margin-top: 8px;" onclick="addNewSubject()">مضمون شامل کریں</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">نیا MCQ شامل کریں</div>
+          <div class="grid-2">
+            <div>
+              <label>جماعت:</label>
+              <select id="admClass"></select>
+            </div>
+            <div>
+              <label>مضمون:</label>
+              <select id="admSubject"></select>
+            </div>
+            <div>
+              <label>میڈیم:</label>
+              <select id="admMedium">
+                <option value="urdu">اردو میڈیم</option>
+                <option value="english">English Medium</option>
+              </select>
+            </div>
+            <div>
+              <label>مشکل کی سطح:</label>
+              <select id="admDiff">
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+          </div>
+
+          <label style="margin-top:10px; display:block;">موضوع / باب اور SLO:</label>
+          <div class="grid-2">
+            <input type="text" id="admTopic" placeholder="موضوع / باب" />
+            <input type="text" id="admSlo" placeholder="SLO کوڈ یا وضاحت" />
+          </div>
+
+          <label style="margin-top:10px; display:block;">سوال کا متن:</label>
+          <input type="text" id="admQuestion" placeholder="سوال لکھیں..." />
+
+          <div class="grid-2" style="margin-top:8px;">
+            <input type="text" id="admOptA" placeholder="آپشن A" />
+            <input type="text" id="admOptB" placeholder="آپشن B" />
+            <input type="text" id="admOptC" placeholder="آپشن C" />
+            <input type="text" id="admOptD" placeholder="آپشن D" />
+          </div>
+
+          <div class="grid-2" style="margin-top:8px;">
+            <div>
+              <label>درست جواب (0=A, 1=B, 2=C, 3=D):</label>
+              <select id="admCorrect">
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+                <option value="3">D</option>
+              </select>
+            </div>
+            <div>
+              <label>مختصر وضاحت:</label>
+              <input type="text" id="admExplanation" placeholder="وضاحت لکھیں..." />
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="margin-top: 12px;" onclick="addMcqFromAdmin()">سوال محفوظ کریں</button>
+        </div>
+
+        <div class="card">
+          <div class="section-title">CSV Bulk Import اور Data Backup / Export</div>
+          <p style="font-size:0.86rem; color:var(--muted); margin-bottom:8px;">
+            CSV فارمیٹ: <code>class,subject,medium,topic,slo,difficulty,question,optA,optB,optC,optD,correctIndex(0-3),explanation</code>
+          </p>
+          <textarea id="csvImportArea" rows="4" placeholder="جماعت سوم,اردو,urdu,گرامر,SLO-UR-01,Easy,اسم کی تعریف کیا ہے؟,کسی شخص چیز یا جگہ کا نام,کام کرنے کا عمل,اسم کی خوبی,حرف ربط,0,اسم کسی شخص، جگہ یا چیز کے نام کو کہتے ہیں۔"></textarea>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+            <button class="btn btn-accent btn-sm" onclick="importCsvMcqs()">CSV سوالات امپورٹ کریں</button>
+            <button class="btn btn-outline btn-sm" onclick="exportBackupJson()">JSON بیک اپ ڈاؤن لوڈ کریں</button>
+            <button class="btn btn-danger btn-sm" onclick="resetAllData()">ڈیفالٹ ڈیٹا بحال کریں</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">موجودہ سوالات کی فہرست (<span id="adminTotalQuestionsCount">0</span>)</div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>جماعت</th>
+                  <th>مضمون</th>
+                  <th>میڈیم</th>
+                  <th>سوال</th>
+                  <th>عمل</th>
+                </tr>
+              </thead>
+              <tbody id="adminQuestionsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="disclaimer">
+      <strong>اردو کا شجرہ (Urdu Ka Shajra)</strong> — بہتر تعلیم، بہتر تیاری، روشن مستقبل | یہ ایک آزاد تعلیمی پریکٹس پلیٹ فارم ہے، سرکاری ایپ نہیں۔
+    </footer>
+  </div>
+
+  <script>
+    const STORAGE_KEYS = {
+      QUESTIONS: 'uks_primary_questions_v1',
+      RESULTS: 'uks_primary_results_v1',
+      WRONG: 'uks_primary_wrong_v1',
+      CLASSES: 'uks_primary_classes_v1',
+      SUBJECTS: 'uks_primary_subjects_v1'
+    };
+
+    const DEFAULT_CLASSES = ['جماعت سوم', 'جماعت چہارم', 'جماعت پنجم'];
+    const DEFAULT_SUBJECTS = [
+      { id: 'urdu', ur: 'اردو', en: 'Urdu', desc: 'گرامر، الفاظ، فہم و تفہیم اور نصابی موضوعات' },
+      { id: 'english', ur: 'انگریزی', en: 'English', desc: 'Grammar, Vocabulary, Comprehension & SLOs' },
+      { id: 'math', ur: 'ریاضی', en: 'Mathematics', desc: 'حساب، ہندسوں کی پہچان، منطق اور عملی مسائل' },
+      { id: 'gk', ur: 'واقفیت عامہ', en: 'General Knowledge', desc: 'سائنس، ماحولیات، معاشرتی علوم، صحت اور روزمرہ زندگی' }
+    ];
+
+    // 72 Original Copyright-Safe Starter Questions (3 per Class x Subject x Medium)
+    const INITIAL_QUESTIONS = [
+      // ================= CLASS 3 - URDU (URDU MEDIUM) =================
+      { id: 'q1', class: 'جماعت سوم', subject: 'urdu', medium: 'urdu', topic: 'قواعد (اسم)', slo: 'SLO-U3-01', difficulty: 'Easy', question: 'درج ذیل میں سے کون سا لفظ "اسم" (نام) ہے؟', options: ['دوڑنا', 'لاہور', 'تیز', 'اور'], correct: 1, explanation: 'لاہور ایک شہر کا نام ہے، اس لیے یہ اسم ہے۔' },
+      { id: 'q2', class: 'جماعت سوم', subject: 'urdu', medium: 'urdu', topic: 'الفاظ متضاد', slo: 'SLO-U3-04', difficulty: 'Easy', question: '"دن" کا درست متضاد لفظ کون سا ہے؟', options: ['شام', 'رات', 'صبح', 'روشنی'], correct: 1, explanation: 'دن کا متضاد رات ہوتا ہے۔' },
+      { id: 'q3', class: 'جماعت سوم', subject: 'urdu', medium: 'urdu', topic: 'جملہ سازی', slo: 'SLO-U3-08', difficulty: 'Medium', question: 'کون سا جملہ قواعد کے لحاظ سے درست ہے؟', options: ['سارا اسکول جاتی ہے', 'سارا اسکول جاتا ہے', 'سارا اسکول جاتے ہیں', 'اسکول جاتی سارا ہے'], correct: 0, explanation: 'سارا مؤنث ہے، اس لیے فعل "جاتی ہے" درست ہے۔' },
+
+      // ================= CLASS 3 - URDU (ENGLISH MEDIUM) =================
+      { id: 'q4', class: 'جماعت سوم', subject: 'urdu', medium: 'english', topic: 'Urdu Alphabet & Vowels', slo: 'SLO-U3-01', difficulty: 'Easy', question: 'How many basic letters are in the Urdu alphabet (حروفِ تہجی)?', options: ['26', '38', '10', '50'], correct: 1, explanation: 'Standard Urdu alphabet is commonly taught with 38 basic letters.' },
+      { id: 'q5', class: 'جماعت سوم', subject: 'urdu', medium: 'english', topic: 'Opposites (متضاد)', slo: 'SLO-U3-04', difficulty: 'Easy', question: 'What is the opposite (متضاد) of "اچھا" (Achha / Good)?', options: ['بڑا', 'برا', 'نیا', 'سچ'], correct: 1, explanation: '"برا" (Bura) means bad, which is the opposite of "اچھا".' },
+      { id: 'q6', class: 'جماعت سوم', subject: 'urdu', medium: 'english', topic: 'Singular & Plural', slo: 'SLO-U3-06', difficulty: 'Medium', question: 'What is the plural (جمع) of "کتاب" (Kitab / Book)?', options: ['کتابیں', 'کتبوں', 'مکتب', 'کتابچہ'], correct: 0, explanation: 'The plural of کتاب is کتابیں.' },
+
+      // ================= CLASS 3 - ENGLISH (URDU MEDIUM) =================
+      { id: 'q7', class: 'جماعت سوم', subject: 'english', medium: 'urdu', topic: 'Parts of Speech (Noun)', slo: 'SLO-E3-02', difficulty: 'Easy', question: 'انگریزی جملے "Ali reads a book." میں Noun کون سا لفظ ہے؟', options: ['reads', 'Ali', 'a', 'is'], correct: 1, explanation: 'Ali ایک شخص کا نام ہے، اس لیے یہ Noun ہے۔' },
+      { id: 'q8', class: 'جماعت سوم', subject: 'english', medium: 'urdu', topic: 'Plural Forms', slo: 'SLO-E3-05', difficulty: 'Easy', question: 'لفظ "box" کی درست جمع (Plural) کیا ہے؟', options: ['boxs', 'boxes', 'boxen', 'boxies'], correct: 1, explanation: 'x پر ختم ہونے والے الفاظ کی جمع میں es کا اضافہ کیا جاتا ہے۔' },
+      { id: 'q9', class: 'جماعت سوم', subject: 'english', medium: 'urdu', topic: 'Articles (a / an)', slo: 'SLO-E3-07', difficulty: 'Medium', question: 'خالی جگہ پر کریں: "She ate ___ apple."', options: ['a', 'an', 'the', 'no article'], correct: 1, explanation: 'apple کی آواز vowel (آوازِ مصوتہ) سے شروع ہوتی ہے، اس لیے an آئے گا۔' },
+
+      // ================= CLASS 3 - ENGLISH (ENGLISH MEDIUM) =================
+      { id: 'q10', class: 'جماعت سوم', subject: 'english', medium: 'english', topic: 'Action Verbs', slo: 'SLO-E3-03', difficulty: 'Easy', question: 'Which word is an action verb in "Birds fly in the sky"?', options: ['Birds', 'fly', 'sky', 'the'], correct: 1, explanation: '"Fly" shows an action.' },
+      { id: 'q11', class: 'جماعت سوم', subject: 'english', medium: 'english', topic: 'Punctuation', slo: 'SLO-E3-09', difficulty: 'Easy', question: 'Which punctuation mark ends a telling sentence (statement)?', options: ['Question mark (?)', 'Full stop (.)', 'Comma (,)', 'Colon (:)'], correct: 1, explanation: 'A statement ends with a full stop (.).' },
+      { id: 'q12', class: 'جماعت سوم', subject: 'english', medium: 'english', topic: 'Pronouns', slo: 'SLO-E3-04', difficulty: 'Medium', question: 'Choose the correct pronoun for a boy: "___ is my brother."', options: ['She', 'He', 'They', 'It'], correct: 1, explanation: '"He" is used for a male person.' },
+
+      // ================= CLASS 3 - MATH (URDU MEDIUM) =================
+      { id: 'q13', class: 'جماعت سوم', subject: 'math', medium: 'urdu', topic: 'اعداد کی پہچان', slo: 'SLO-M3-01', difficulty: 'Easy', question: 'عدد 456 میں 5 کا مقامی عدد (Place Value) کیا ہے؟', options: ['5', '50', '500', '55'], correct: 1, explanation: '5 دہائی کے مقام پر ہے، لہٰذا اس کی قیمت 50 ہے۔' },
+      { id: 'q14', class: 'جماعت سوم', subject: 'math', medium: 'urdu', topic: 'جمع و تفریق', slo: 'SLO-M3-05', difficulty: 'Easy', question: '245 + 132 کا حاصلِ جمع کیا ہوگا؟', options: ['367', '377', '387', '113'], correct: 1, explanation: 'اکائی: 5+2=7، دہائی: 4+3=7، سینکڑا: 2+1=3؛ جواب 377 ہے۔' },
+      { id: 'q15', class: 'جماعت سوم', subject: 'math', medium: 'urdu', topic: 'ضرب', slo: 'SLO-M3-08', difficulty: 'Medium', question: 'اگر ایک ڈبے میں 6 پنسلیں ہوں تو 4 ڈبوں میں کل کتنی پنسلیں ہوں گی؟', options: ['10', '20', '24', '30'], correct: 2, explanation: '6 × 4 = 24 پنسلیں۔' },
+
+      // ================= CLASS 3 - MATH (ENGLISH MEDIUM) =================
+      { id: 'q16', class: 'جماعت سوم', subject: 'math', medium: 'english', topic: 'Place Value', slo: 'SLO-M3-01', difficulty: 'Easy', question: 'What is the place value of 7 in 782?', options: ['7', '70', '700', '78'], correct: 2, explanation: '7 is in the hundreds place, so its value is 700.' },
+      { id: 'q17', class: 'جماعت سوم', subject: 'math', medium: 'english', topic: 'Subtraction', slo: 'SLO-M3-06', difficulty: 'Easy', question: 'What is 500 - 225?', options: ['275', '325', '285', '725'], correct: 0, explanation: '500 minus 225 equals 275.' },
+      { id: 'q18', class: 'جماعت سوم', subject: 'math', medium: 'english', topic: 'Multiplication', slo: 'SLO-M3-08', difficulty: 'Medium', question: 'What is 9 × 3?', options: ['12', '24', '27', '36'], correct: 2, explanation: '9 multiplied by 3 is 27.' },
+
+      // ================= CLASS 3 - GK (URDU MEDIUM) =================
+      { id: 'q19', class: 'جماعت سوم', subject: 'gk', medium: 'urdu', topic: 'صحت و صفائی', slo: 'SLO-GK3-02', difficulty: 'Easy', question: 'کھانا کھانے سے پہلے اور بعد میں کیا کرنا ضروری ہے؟', options: ['ہاتھ دھونا', 'سونا', 'ٹی وی دیکھنا', 'دوڑنا'], correct: 0, explanation: 'ہاتھ دھونے سے جراثیم اور بیماریوں سے بچاؤ ہوتا ہے۔' },
+      { id: 'q20', class: 'جماعت سوم', subject: 'gk', medium: 'urdu', topic: 'ماحولیات', slo: 'SLO-GK3-06', difficulty: 'Easy', question: 'درخت ہمارے ماحول کے لیے کیوں مفید ہیں؟', options: ['آکسیجن دیتے ہیں', 'ہوا گندی کرتے ہیں', 'شور مچاتے ہیں', 'پانی خشک کرتے ہیں'], correct: 0, explanation: 'درخت ہوا کو صاف رکھتے اور آکسیجن فراہم کرتے ہیں۔' },
+      { id: 'q21', class: 'جماعت سوم', subject: 'gk', medium: 'urdu', topic: 'حواسِ خمسہ', slo: 'SLO-GK3-04', difficulty: 'Medium', question: 'ہم آوازوں کو کس عضو کی مدد سے سنتے ہیں؟', options: ['آنکھ', 'کان', 'ناک', 'زبان'], correct: 1, explanation: 'ہم کانوں کی مدد سے آوازیں سنتے ہیں۔' },
+
+      // ================= CLASS 3 - GK (ENGLISH MEDIUM) =================
+      { id: 'q22', class: 'جماعت سوم', subject: 'gk', medium: 'english', topic: 'Living & Non-Living', slo: 'SLO-GK3-01', difficulty: 'Easy', question: 'Which of the following is a living thing?', options: ['Stone', 'Chair', 'Sparrow', 'Pencil'], correct: 2, explanation: 'A sparrow grows, breathes, and needs food, so it is living.' },
+      { id: 'q23', class: 'جماعت سوم', subject: 'gk', medium: 'english', topic: 'Water & Environment', slo: 'SLO-GK3-07', difficulty: 'Easy', question: 'Why should we save water?', options: ['Water is a limited resource', 'Water makes noise', 'Water has no use', 'To waste electricity'], correct: 0, explanation: 'Clean water is precious and limited; we must conserve it.' },
+      { id: 'q24', class: 'جماعت سوم', subject: 'gk', medium: 'english', topic: 'Healthy Habits', slo: 'SLO-GK3-02', difficulty: 'Medium', question: 'Which food helps keep our bones strong?', options: ['Candy', 'Milk', 'Cola', 'Chips'], correct: 1, explanation: 'Milk provides calcium, which helps build strong bones.' },
+
+      // ================= CLASS 4 - URDU (URDU MEDIUM) =================
+      { id: 'q25', class: 'جماعت چہارم', subject: 'urdu', medium: 'urdu', topic: 'اسم کی اقسام', slo: 'SLO-U4-02', difficulty: 'Easy', question: 'وہ اسم جو کسی خاص شخص، جگہ یا چیز کے لیے بولا جائے کیا کہلاتا ہے؟', options: ['اسم نکرہ', 'اسم معرفہ', 'فعل', 'ضمیر'], correct: 1, explanation: 'خاص نام کو اسم معرفہ (اسم خاص) کہتے ہیں۔' },
+      { id: 'q26', class: 'جماعت چہارم', subject: 'urdu', medium: 'urdu', topic: 'محاورات و روزمرہ', slo: 'SLO-U4-07', difficulty: 'Medium', question: '"آنکھوں کا تارا ہونا" محاورے کا درست مفہوم کیا ہے؟', options: ['بہت پیارا ہونا', 'ناراض ہونا', 'دور چلے جانا', 'غصہ کرنا'], correct: 0, explanation: 'آنکھوں کا تارا ہونا کا مطلب بے حد پیارا ہونا ہے۔' },
+      { id: 'q27', class: 'جماعت چہارم', subject: 'urdu', medium: 'urdu', topic: 'فہم و تفہیم', slo: 'SLO-U4-05', difficulty: 'Medium', question: 'اگر کوئی طالب علم وقت کی پابندی کرے تو اس کا کیا فائدہ ہوگا؟', options: ['کام وقت پر مکمل ہوں گے', 'نقصان ہوگا', 'سستی بڑھے گی', 'سبق بھول جائے گا'], correct: 0, explanation: 'وقت کی پابندی سے کام منظم اور بروقت مکمل ہوتے ہیں۔' },
+
+      // ================= CLASS 4 - URDU (ENGLISH MEDIUM) =================
+      { id: 'q28', class: 'جماعت چہارم', subject: 'urdu', medium: 'english', topic: 'Noun Types (معرفہ / نکرہ)', slo: 'SLO-U4-02', difficulty: 'Easy', question: 'Which is an example of a proper noun (اسم معرفہ) in Urdu?', options: ['دریا (River)', 'دریائے راوی (River Ravi)', 'شہر (City)', 'پہاڑ (Mountain)'], correct: 1, explanation: 'دریائے راوی is a specific river name (اسم معرفہ).' },
+      { id: 'q29', class: 'جماعت چہارم', subject: 'urdu', medium: 'english', topic: 'Idioms (محاورات)', slo: 'SLO-U4-07', difficulty: 'Medium', question: 'What does the Urdu idiom "ہمت نہ ہارنا" mean?', options: ['Not to lose courage', 'To sleep early', 'To run fast', 'To forget homework'], correct: 0, explanation: 'ہمت نہ ہارنا means staying brave and not giving up.' },
+      { id: 'q30', class: 'جماعت چہارم', subject: 'urdu', medium: 'english', topic: 'Synonyms (مترادف)', slo: 'SLO-U4-04', difficulty: 'Easy', question: 'Which word is a synonym (مترادف) of "خوش" (Happy)?', options: ['مسرور', 'اداس', 'تنگ', 'خالی'], correct: 0, explanation: 'مسرور means happy/delighted.' },
+
+      // ================= CLASS 4 - ENGLISH (URDU MEDIUM) =================
+      { id: 'q31', class: 'جماعت چہارم', subject: 'english', medium: 'urdu', topic: 'Tenses (Present Continuous)', slo: 'SLO-E4-06', difficulty: 'Medium', question: 'درست فعل منتخب کریں: "They ___ playing football now."', options: ['is', 'am', 'are', 'was'], correct: 2, explanation: 'They جمع کے لیے فعل حال جاری میں are استعمال ہوتا ہے۔' },
+      { id: 'q32', class: 'جماعت چہارم', subject: 'english', medium: 'urdu', topic: 'Adjectives', slo: 'SLO-E4-03', difficulty: 'Easy', question: 'جملے "It is a cold morning." میں Adjective کون سا ہے؟', options: ['morning', 'cold', 'is', 'It'], correct: 1, explanation: 'cold صبح کی کیفیت بتا رہا ہے، اس لیے یہ Adjective ہے۔' },
+      { id: 'q33', class: 'جماعت چہارم', subject: 'english', medium: 'urdu', topic: 'Prepositions', slo: 'SLO-E4-05', difficulty: 'Easy', question: '"The cat is sitting ___ the table." میں درست لفظ لگائیں:', options: ['under', 'fly', 'quickly', 'happy'], correct: 0, explanation: 'under مقام/جگہ بتانے کے لیے Preposition ہے۔' },
+
+      // ================= CLASS 4 - ENGLISH (ENGLISH MEDIUM) =================
+      { id: 'q34', class: 'جماعت چہارم', subject: 'english', medium: 'english', topic: 'Adjectives', slo: 'SLO-E4-03', difficulty: 'Easy', question: 'Identify the adjective in: "Sana bought a red bag."', options: ['Sana', 'bought', 'red', 'bag'], correct: 2, explanation: '"Red" describes the color of the bag.' },
+      { id: 'q35', class: 'جماعت چہارم', subject: 'english', medium: 'english', topic: 'Past Simple Tense', slo: 'SLO-E4-06', difficulty: 'Medium', question: 'Choose the correct past form: "Yesterday, we ___ the zoo."', options: ['visit', 'visited', 'visiting', 'visits'], correct: 1, explanation: '"Yesterday" indicates past time, so "visited" is correct.' },
+      { id: 'q36', class: 'جماعت چہارم', subject: 'english', medium: 'english', topic: 'Prepositions', slo: 'SLO-E4-05', difficulty: 'Easy', question: 'Fill in the blank: "The books are ___ the shelf."', options: ['on', 'go', 'sweet', 'loudly'], correct: 0, explanation: '"On" shows position on a surface.' },
+
+      // ================= CLASS 4 - MATH (URDU MEDIUM) =================
+      { id: 'q37', class: 'جماعت چہارم', subject: 'math', medium: 'urdu', topic: 'کسر (Fractions)', slo: 'SLO-M4-07', difficulty: 'Easy', question: 'اگر ایک روٹی کے 4 برابر حصے کیے جائیں اور 1 حصہ کھا لیا جائے تو باقی کسر کیا ہوگی؟', options: ['1/4', '3/4', '2/4', '4/4'], correct: 1, explanation: '4 میں سے 1 حصہ کھا لیا گیا تو 3/4 حصہ باقی بچا۔' },
+      { id: 'q38', class: 'جماعت چہارم', subject: 'math', medium: 'urdu', topic: 'تقسیم', slo: 'SLO-M4-04', difficulty: 'Medium', question: '48 ÷ 6 کا جواب کیا ہے؟', options: ['6', '7', '8', '9'], correct: 2, explanation: '6 کو 8 سے ضرب دینے پر 48 آتا ہے۔' },
+      { id: 'q39', class: 'جماعت چہارم', subject: 'math', medium: 'urdu', topic: 'پیمائش (لمبائی)', slo: 'SLO-M4-09', difficulty: 'Easy', question: '1 میٹر کتنے سینٹی میٹر کے برابر ہوتا ہے؟', options: ['10 cm', '100 cm', '1000 cm', '50 cm'], correct: 1, explanation: '1 میٹر = 100 سینٹی میٹر۔' },
+
+      // ================= CLASS 4 - MATH (ENGLISH MEDIUM) =================
+      { id: 'q40', class: 'جماعت چہارم', subject: 'math', medium: 'english', topic: 'Fractions', slo: 'SLO-M4-07', difficulty: 'Easy', question: 'Which fraction represents half of a whole?', options: ['1/2', '1/3', '3/4', '2/5'], correct: 0, explanation: '1/2 represents one out of two equal parts (half).' },
+      { id: 'q41', class: 'جماعت چہارم', subject: 'math', medium: 'english', topic: 'Division', slo: 'SLO-M4-04', difficulty: 'Medium', question: 'What is 72 ÷ 8?', options: ['7', '8', '9', '6'], correct: 2, explanation: '72 divided by 8 is 9.' },
+      { id: 'q42', class: 'جماعت چہارم', subject: 'math', medium: 'english', topic: 'Measurement', slo: 'SLO-M4-09', difficulty: 'Easy', question: 'How many grams are in 1 kilogram?', options: ['100 g', '500 g', '1000 g', '50 g'], correct: 2, explanation: '1 kilogram = 1,000 grams.' },
+
+      // ================= CLASS 4 - GK (URDU MEDIUM) =================
+      { id: 'q43', class: 'جماعت چہارم', subject: 'gk', medium: 'urdu', topic: 'مادہ کی حالتیں', slo: 'SLO-GK4-03', difficulty: 'Easy', question: 'پانی کی برف کون سی حالتِ مادہ ہے؟', options: ['ٹھوس', 'مایع', 'گیس', 'بخارات'], correct: 0, explanation: 'برف مادہ کی ٹھوس حالت ہے۔' },
+      { id: 'q44', class: 'جماعت چہارم', subject: 'gk', medium: 'urdu', topic: 'شہریت و حقوق', slo: 'SLO-GK4-08', difficulty: 'Medium', question: 'قطار میں اپنی باری کا انتظار کرنا کون سی اچھی عادت ہے؟', options: ['صبر و نظم و ضبط', 'بدتمیزی', 'وقت کا ضیاع', 'لڑائی'], correct: 0, explanation: 'اپنی باری کا انتظار صبر اور شہری نظم و ضبط کو ظاہر کرتا ہے۔' },
+      { id: 'q45', class: 'جماعت چہارم', subject: 'gk', medium: 'urdu', topic: 'توانائی', slo: 'SLO-GK4-06', difficulty: 'Medium', question: 'سورج ہمیں بنیادی طور پر کیا فراہم کرتا ہے؟', options: ['روشنی اور حرارت', 'برف', 'مٹی', 'لوہا'], correct: 0, explanation: 'سورج زمین کے لیے روشنی اور حرارت کا بڑا ذریعہ ہے۔' },
+
+      // ================= CLASS 4 - GK (ENGLISH MEDIUM) =================
+      { id: 'q46', class: 'جماعت چہارم', subject: 'gk', medium: 'english', topic: 'States of Matter', slo: 'SLO-GK4-03', difficulty: 'Easy', question: 'Which state of matter has no fixed shape and spreads in a room?', options: ['Solid', 'Liquid', 'Gas', 'Stone'], correct: 2, explanation: 'Gases take the shape and volume of their container.' },
+      { id: 'q47', class: 'جماعت چہارم', subject: 'gk', medium: 'english', topic: 'Earth & Space', slo: 'SLO-GK4-05', difficulty: 'Easy', question: 'Which planet do we live on?', options: ['Mars', 'Earth', 'Venus', 'Jupiter'], correct: 1, explanation: 'We live on planet Earth.' },
+      { id: 'q48', class: 'جماعت چہارم', subject: 'gk', medium: 'english', topic: 'Community & Safety', slo: 'SLO-GK4-08', difficulty: 'Medium', question: 'What should you do when crossing a busy road?', options: ['Look both ways and use zebra crossing', 'Run without looking', 'Close your eyes', 'Sit on the road'], correct: 0, explanation: 'Checking both sides and using a crosswalk keeps road users safe.' },
+
+      // ================= CLASS 5 - URDU (URDU MEDIUM) =================
+      { id: 'q49', class: 'جماعت پنجم', subject: 'urdu', medium: 'urdu', topic: 'رموزِ اوقاف', slo: 'SLO-U5-06', difficulty: 'Easy', question: 'سوالیہ جملے کے آخر میں کون سی علامت لگائی جاتی ہے؟', options: ['ختمہ (۔)', 'سوالیہ نشان (؟)', 'سکتہ (،)', 'رابطہ (:)'], correct: 1, explanation: 'سوالیہ جملے کے اختتام پر سوالیہ نشان (؟) آتا ہے۔' },
+      { id: 'q50', class: 'جماعت پنجم', subject: 'urdu', medium: 'urdu', topic: 'فعل کی اقسام', slo: 'SLO-U5-03', difficulty: 'Medium', question: '"احمد کل لاہور جائے گا" میں کون سا زمانہ پایا جاتا ہے؟', options: ['فعل ماضی', 'فعل حال', 'فعل مستقبل', 'فعل امر'], correct: 2, explanation: '"جائے گا" آنے والے وقت کو ظاہر کرتا ہے، لہٰذا یہ فعل مستقبل ہے۔' },
+      { id: 'q51', class: 'جماعت پنجم', subject: 'urdu', medium: 'urdu', topic: 'الفاظ و معانی', slo: 'SLO-U5-04', difficulty: 'Hard', question: '"محنت کا پھل میٹھا ہوتا ہے" سے کیا مراد ہے؟', options: ['محنت کے نتائج اچھے اور مفید نکلتے ہیں', 'پھل ہمیشہ میٹھا ہوتا ہے', 'محنت کی ضرورت نہیں', 'جھوٹ بولنا اچھا ہے'], correct: 0, explanation: 'اس کہاوت کا مطلب ہے کہ ایمانداری اور محنت کا نتیجہ فائدہ مند ہوتا ہے۔' },
+
+      // ================= CLASS 5 - URDU (ENGLISH MEDIUM) =================
+      { id: 'q52', class: 'جماعت پنجم', subject: 'urdu', medium: 'english', topic: 'Verb Tenses in Urdu', slo: 'SLO-U5-03', difficulty: 'Medium', question: 'In Urdu, "وہ لکھتا ہے" indicates which tense?', options: ['فعل ماضی (Past)', 'فعل حال (Present)', 'فعل مستقبل (Future)', 'Imperative'], correct: 1, explanation: '"لکھتا ہے" shows a present/habitual action (فعل حال).' },
+      { id: 'q53', class: 'جماعت پنجم', subject: 'urdu', medium: 'english', topic: 'Punctuation in Urdu', slo: 'SLO-U5-06', difficulty: 'Easy', question: 'Which Urdu punctuation mark is used for a short pause in a sentence?', options: ['سکتہ (،)', 'ختمہ (۔)', 'سوالیہ (؟)', 'قوسین ()'], correct: 0, explanation: 'سکتہ (،) indicates a brief pause.' },
+      { id: 'q54', class: 'جماعت پنجم', subject: 'urdu', medium: 'english', topic: 'Reading Comprehension', slo: 'SLO-U5-05', difficulty: 'Hard', question: 'Why is tree plantation important for cities like Lahore or Multan?', options: ['Reduces air pollution and heat', 'Blocks all sunlight', 'Increases traffic noise', 'Makes soil infertile'], correct: 0, explanation: 'Trees help cool the environment and purify air.' },
+
+      // ================= CLASS 5 - ENGLISH (URDU MEDIUM) =================
+      { id: 'q55', class: 'جماعت پنجم', subject: 'english', medium: 'urdu', topic: 'Adverbs', slo: 'SLO-E5-04', difficulty: 'Medium', question: 'جملے "The tortoise walked slowly." میں Adverb کون سا ہے؟', options: ['tortoise', 'walked', 'slowly', 'The'], correct: 2, explanation: 'slowly فعل (walked) کے ہونے کا انداز بتا رہا ہے، اس لیے یہ Adverb ہے۔' },
+      { id: 'q56', class: 'جماعت پنجم', subject: 'english', medium: 'urdu', topic: 'Conjunctions', slo: 'SLO-E5-06', difficulty: 'Easy', question: 'دو جملوں کو جوڑنے کے لیے درست لفظ لگائیں: "I wanted to go, ___ it was raining."', options: ['but', 'or', 'so', 'an'], correct: 0, explanation: 'متضاد بات جوڑنے کے لیے but استعمال ہوتا ہے۔' },
+      { id: 'q57', class: 'جماعت پنجم', subject: 'english', medium: 'urdu', topic: 'Sentence Structure', slo: 'SLO-E5-08', difficulty: 'Hard', question: 'درست سوالیہ ترتیب منتخب کریں:', options: ['Where does she live?', 'Where she does live?', 'Does where she live?', 'Live she where does?'], correct: 0, explanation: 'WH-سوال میں مددگار فعل (does) فاعل (she) سے پہلے آتا ہے۔' },
+
+      // ================= CLASS 5 - ENGLISH (ENGLISH MEDIUM) =================
+      { id: 'q58', class: 'جماعت پنجم', subject: 'english', medium: 'english', topic: 'Adverbs', slo: 'SLO-E5-04', difficulty: 'Medium', question: 'Which word is an adverb in: "He spoke politely to the guest"?', options: ['spoke', 'politely', 'guest', 'the'], correct: 1, explanation: '"Politely" tells how he spoke.' },
+      { id: 'q59', class: 'جماعت پنجم', subject: 'english', medium: 'english', topic: 'Degrees of Adjective', slo: 'SLO-E5-05', difficulty: 'Easy', question: 'What is the comparative degree of "tall"?', options: ['tallest', 'taller', 'more tall', 'tallly'], correct: 1, explanation: 'Comparing two things uses the comparative form "taller".' },
+      { id: 'q60', class: 'جماعت پنجم', subject: 'english', medium: 'english', topic: 'Conjunctions', slo: 'SLO-E5-06', difficulty: 'Medium', question: 'Choose the best conjunction: "Study hard ___ you will pass."', options: ['and', 'but', 'or', 'yet'], correct: 0, explanation: '"And" connects two positive related outcomes here.' },
+
+      // ================= CLASS 5 - MATH (URDU MEDIUM) =================
+      { id: 'q61', class: 'جماعت پنجم', subject: 'math', medium: 'urdu', topic: 'اعشاریہ (Decimals)', slo: 'SLO-M5-06', difficulty: 'Medium', question: '0.5 کو عام کسر میں کیسے لکھا جا سکتا ہے؟', options: ['1/2', '1/5', '5/100', '2/1'], correct: 0, explanation: '0.5 کا مطلب 5/10 ہے، جسے سادہ کر کے 1/2 لکھا جاتا ہے۔' },
+      { id: 'q62', class: 'جماعت پنجم', subject: 'math', medium: 'urdu', topic: 'محیط (Perimeter)', slo: 'SLO-M5-10', difficulty: 'Medium', question: 'ایک مربع کی ہر ضلع 4 سینٹی میٹر ہو تو اس کا محیط (Perimeter) کیا ہوگا؟', options: ['8 cm', '12 cm', '16 cm', '20 cm'], correct: 2, explanation: 'مربع کے 4 برابر اضلاع ہوتے ہیں: 4 × 4 = 16 cm۔' },
+      { id: 'q63', class: 'جماعت پنجم', subject: 'math', medium: 'urdu', topic: 'اوسط (Average)', slo: 'SLO-M5-12', difficulty: 'Hard', question: 'اعداد 10، 20 اور 30 کی اوسط کیا ہے؟', options: ['15', '20', '25', '60'], correct: 1, explanation: 'مجموعہ 60 ÷ تعداد 3 = 20۔' },
+
+      // ================= CLASS 5 - MATH (ENGLISH MEDIUM) =================
+      { id: 'q64', class: 'جماعت پنجم', subject: 'math', medium: 'english', topic: 'Decimals', slo: 'SLO-M5-06', difficulty: 'Medium', question: 'What is 1.25 + 0.75?', options: ['1.90', '2.00', '2.10', '1.85'], correct: 1, explanation: '1.25 + 0.75 = 2.00.' },
+      { id: 'q65', class: 'جماعت پنجم', subject: 'math', medium: 'english', topic: 'Perimeter', slo: 'SLO-M5-10', difficulty: 'Medium', question: 'Find the perimeter of a rectangle with length 6 cm and width 4 cm.', options: ['10 cm', '20 cm', '24 cm', '12 cm'], correct: 1, explanation: 'Perimeter = 2 × (6 + 4) = 20 cm.' },
+      { id: 'q66', class: 'جماعت پنجم', subject: 'math', medium: 'english', topic: 'Factors & Multiples', slo: 'SLO-M5-02', difficulty: 'Hard', question: 'Which number is a multiple of both 3 and 5?', options: ['10', '12', '15', '20'], correct: 2, explanation: '15 is divisible by both 3 and 5.' },
+
+      // ================= CLASS 5 - GK (URDU MEDIUM) =================
+      { id: 'q67', class: 'جماعت پنجم', subject: 'gk', medium: 'urdu', topic: 'پودوں کا نظام', slo: 'SLO-GK5-01', difficulty: 'Easy', question: 'پودے کا کون سا حصہ زمین سے پانی اور نمکیات جذب کرتا ہے؟', options: ['پتے', 'جڑیں', 'پھول', 'پھل'], correct: 1, explanation: 'جڑیں مٹی سے پانی اور معدنیات جذب کرتی ہیں۔' },
+      { id: 'q68', class: 'جماعت پنجم', subject: 'gk', medium: 'urdu', topic: 'آلودگی اور ماحول', slo: 'SLO-GK5-07', difficulty: 'Medium', question: 'پلاسٹک تھیلوں کے بے جا استعمال کا کیا نقصان ہے؟', options: ['ماحولیاتی آلودگی بڑھتی ہے', 'ہوا خوشگوار ہوتی ہے', 'فصل تیزی سے اگتی ہے', 'کوئی نقصان نہیں'], correct: 0, explanation: 'پلاسٹک مٹی اور نکاسی آب کے نظام کو نقصان پہنچاتا ہے۔' },
+      { id: 'q69', class: 'جماعت پنجم', subject: 'gk', medium: 'urdu', topic: 'قوت اور حرکت', slo: 'SLO-GK5-05', difficulty: 'Hard', question: 'کسی رکی ہوئی گیند کو حرکت دینے کے لیے کس چیز کی ضرورت ہوتی ہے؟', options: ['قوت (Force)', 'رنگ', 'آواز', 'سایہ'], correct: 0, explanation: 'کسی جسم کی حالت یا حرکت بدلنے کے لیے قوت لگانی پڑتی ہے۔' },
+
+      // ================= CLASS 5 - GK (ENGLISH MEDIUM) =================
+      { id: 'q70', class: 'جماعت پنجم', subject: 'gk', medium: 'english', topic: 'Plant Parts & Functions', slo: 'SLO-GK5-01', difficulty: 'Easy', question: 'Which part of a plant makes food using sunlight?', options: ['Root', 'Leaf', 'Seed', 'Stem'], correct: 1, explanation: 'Green leaves prepare food in the presence of sunlight.' },
+      { id: 'q71', class: 'جماعت پنجم', subject: 'gk', medium: 'english', topic: 'Force & Motion', slo: 'SLO-GK5-05', difficulty: 'Medium', question: 'Pushing a swing is an example of:', options: ['Force', 'Evaporation', 'Melting', 'Shadow'], correct: 0, explanation: 'A push or pull is a force.' },
+      { id: 'q72', class: 'جماعت پنجم', subject: 'gk', medium: 'english', topic: 'Environmental Care', slo: 'SLO-GK5-07', difficulty: 'Hard', question: 'What does "Reduce, Reuse, Recycle" help protect?', options: ['The environment and natural resources', 'Only plastic factories', 'Noise pollution only', 'Nothing'], correct: 0, explanation: 'The 3Rs help reduce waste and conserve resources.' }
+    ];
+
+    // App State
+    let state = {
+      selectedClass: DEFAULT_CLASSES[0],
+      selectedSubject: DEFAULT_SUBJECTS[0].id,
+      selectedMedium: 'urdu',
+      testMode: 'practice',
+      activeQuestions: [],
+      currentIndex: 0,
+      answers: {},
+      timerInterval: null,
+      secondsLeft: 600,
+      startedAt: null,
+      isWrongOnlyMode: false
+    };
+
+    function getClasses() {
+      const saved = localStorage.getItem(STORAGE_KEYS.CLASSES);
+      if (saved) return JSON.parse(saved);
+      localStorage.setItem(STORAGE_KEYS.CLASSES, JSON.stringify(DEFAULT_CLASSES));
+      return DEFAULT_CLASSES;
+    }
+
+    function getSubjects() {
+      const saved = localStorage.getItem(STORAGE_KEYS.SUBJECTS);
+      if (saved) return JSON.parse(saved);
+      localStorage.setItem(STORAGE_KEYS.SUBJECTS, JSON.stringify(DEFAULT_SUBJECTS));
+      return DEFAULT_SUBJECTS;
+    }
+
+    function getQuestions() {
+      const saved = localStorage.getItem(STORAGE_KEYS.QUESTIONS);
+      if (saved) return JSON.parse(saved);
+      localStorage.setItem(STORAGE_KEYS.QUESTIONS, JSON.stringify(INITIAL_QUESTIONS));
+      return INITIAL_QUESTIONS;
+    }
+
+    function saveQuestions(list) {
+      localStorage.setItem(STORAGE_KEYS.QUESTIONS, JSON.stringify(list));
+      updateBadges();
+    }
+
+    function getResults() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.RESULTS) || '[]');
+    }
+
+    function getWrongAnswers() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.WRONG) || '[]');
+    }
+
+    function saveWrongAnswers(list) {
+      localStorage.setItem(STORAGE_KEYS.WRONG, JSON.stringify(list));
+      updateBadges();
+    }
+
+    function applyDirectionByMedium(medium) {
+      if (medium === 'english') {
+        document.body.classList.add('ltr-mode');
+        document.documentElement.setAttribute('dir', 'ltr');
+      } else {
+        document.body.classList.remove('ltr-mode');
+        document.documentElement.setAttribute('dir', 'rtl');
+      }
+    }
+
+    function updateBadges() {
+      const qCount = getQuestions().length;
+      const wCount = getWrongAnswers().length;
+      document.getElementById('bankCountBadge').textContent = `${qCount} اصل سوالات فعال`;
+      document.getElementById('wrongCountNav').textContent = wCount;
+    }
+
+    function switchView(viewName) {
+      const views = ['home', 'quiz', 'result', 'wrong', 'student', 'admin'];
+      views.forEach(v => {
+        document.getElementById(`view-${v}`).classList.toggle('hidden', v !== viewName);
+      });
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === viewName);
+      });
+
+      if (viewName === 'wrong') renderWrongAnswersView();
+      if (viewName === 'student') renderStudentDashboard();
+      if (viewName === 'admin') populateAdminSelectors();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderHomeSelectors() {
+      const classes = getClasses();
+      if (!classes.includes(state.selectedClass)) state.selectedClass = classes[0];
+
+      const classBox = document.getElementById('classSelector');
+      classBox.innerHTML = '';
+      classes.forEach(cls => {
+        const btn = document.createElement('button');
+        btn.className = `choice-chip ${cls === state.selectedClass ? 'active' : ''}`;
+        btn.textContent = cls;
+        btn.onclick = () => {
+          state.selectedClass = cls;
+          renderHomeSelectors();
+        };
+        classBox.appendChild(btn);
+      });
+
+      const subjects = getSubjects();
+      const allQ = getQuestions();
+      const cardsBox = document.getElementById('subjectCards');
+      cardsBox.innerHTML = '';
+      subjects.forEach(sub => {
+        const count = allQ.filter(q =>
+          q.class === state.selectedClass &&
+          q.subject === sub.id &&
+          q.medium === state.selectedMedium
+        ).length;
+
+        const card = document.createElement('div');
+        card.className = `subject-card ${state.selectedSubject === sub.id ? 'selected' : ''}`;
+        card.onclick = () => {
+          state.selectedSubject = sub.id;
+          renderHomeSelectors();
+        };
+        card.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>${sub.ur} (${sub.en})</strong>
+            <span class="badge">${count} سوالات</span>
+          </div>
+          <p style="font-size:0.84rem; color:var(--muted); margin-top:6px;">${sub.desc}</p>
+        `;
+        cardsBox.appendChild(card);
+      });
+    }
+
+    function setMedium(med) {
+      state.selectedMedium = med;
+      document.querySelectorAll('#mediumSelector .choice-chip').forEach(b => {
+        b.classList.toggle('active', b.dataset.med === med);
+      });
+      applyDirectionByMedium(med);
+      renderHomeSelectors();
+    }
+
+    function setTestMode(mode) {
+      state.testMode = mode;
+      document.getElementById('mode-practice').classList.toggle('active', mode === 'practice');
+      document.getElementById('mode-mock').classList.toggle('active', mode === 'mock');
+    }
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function startSelectedTest() {
+      const allQ = getQuestions();
+      let pool = allQ.filter(q =>
+        q.class === state.selectedClass &&
+        q.subject === state.selectedSubject &&
+        q.medium === state.selectedMedium
+      );
+
+      if (pool.length === 0) {
+        alert('اس جماعت، مضمون اور میڈیم کے لیے ابھی سوالات موجود نہیں ہیں۔ ایڈمن پینل سے سوالات شامل کریں۔');
+        return;
+      }
+
+      if (state.testMode === 'mock') {
+        pool = shuffleArray(pool);
+      }
+
+      state.isWrongOnlyMode = false;
+      state.activeQuestions = pool;
+      state.currentIndex = 0;
+      state.answers = {};
+      state.startedAt = Date.now();
+      state.secondsLeft = Math.max(120, pool.length * 60);
+
+      clearInterval(state.timerInterval);
+      if (state.testMode === 'mock') {
+        document.getElementById('timerBox').classList.remove('hidden');
+        updateTimerDisplay();
+        state.timerInterval = setInterval(() => {
+          state.secondsLeft--;
+          updateTimerDisplay();
+          if (state.secondsLeft <= 0) {
+            clearInterval(state.timerInterval);
+            submitQuiz();
+          }
+        }, 1000);
+      } else {
+        document.getElementById('timerBox').classList.add('hidden');
+      }
+
+      switchView('quiz');
+      renderQuestion();
+    }
+
+    function startWrongAnswersTest() {
+      const wrongList = getWrongAnswers();
+      if (wrongList.length === 0) {
+        alert('کوئی غلط سوال محفوظ نہیں ہے۔');
+        return;
+      }
+      state.isWrongOnlyMode = true;
+      state.testMode = 'practice';
+      state.activeQuestions = shuffleArray(wrongList);
+      state.currentIndex = 0;
+      state.answers = {};
+      state.startedAt = Date.now();
+      clearInterval(state.timerInterval);
+      document.getElementById('timerBox').classList.add('hidden');
+      switchView('quiz');
+      renderQuestion();
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(state.secondsLeft / 60);
+      const secs = state.secondsLeft % 60;
+      document.getElementById('timerDisplay').textContent =
+        `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function renderQuestion() {
+      const q = state.activeQuestions[state.currentIndex];
+      const total = state.activeQuestions.length;
+      const answeredCount = Object.keys(state.answers).length;
+
+      document.getElementById('quizHeaderTitle').textContent =
+        state.isWrongOnlyMode
+          ? 'Wrong Answers Only ٹیسٹ'
+          : `${state.selectedClass} — ${state.selectedMedium === 'urdu' ? 'اردو میڈیم' : 'English Medium'}`;
+      document.getElementById('quizModeBadge').textContent =
+        state.testMode === 'mock' ? 'Mock Test' : 'Practice Mode';
+      document.getElementById('qCounterText').textContent = `سوال ${state.currentIndex + 1} از ${total}`;
+      document.getElementById('qRemainingText').textContent = `باقی: ${total - answeredCount}`;
+
+      document.getElementById('qTopicBadge').textContent = `موضوع: ${q.topic || 'عمومی'}`;
+      document.getElementById('qSloBadge').textContent = q.slo || 'SLO';
+      document.getElementById('qDiffBadge').textContent = q.difficulty || 'Medium';
+      document.getElementById('questionText').textContent = q.question;
+
+      const dotsBox = document.getElementById('questionNavDots');
+      dotsBox.innerHTML = '';
+      state.activeQuestions.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = 'q-dot';
+        if (idx === state.currentIndex) dot.classList.add('current');
+        else if (state.answers[idx] !== undefined) dot.classList.add('answered');
+        dot.textContent = idx + 1;
+        dot.onclick = () => {
+          state.currentIndex = idx;
+          renderQuestion();
+        };
+        dotsBox.appendChild(dot);
+      });
+
+      const optsBox = document.getElementById('optionsContainer');
+      optsBox.innerHTML = '';
+      const labels = ['A', 'B', 'C', 'D'];
+      const chosen = state.answers[state.currentIndex];
+
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        if (chosen === idx) btn.classList.add('selected');
+
+        if (state.testMode === 'practice' && chosen !== undefined) {
+          if (idx === q.correct) btn.classList.add('correct');
+          else if (chosen === idx && idx !== q.correct) btn.classList.add('wrong');
+        }
+
+        btn.innerHTML = `<strong>${labels[idx]}.</strong> <span>${optText}</span>`;
+        btn.onclick = () => selectAnswer(idx);
+        optsBox.appendChild(btn);
+      });
+
+      const fbBox = document.getElementById('instantFeedback');
+      if (state.testMode === 'practice' && chosen !== undefined) {
+        fbBox.classList.remove('hidden');
+        const isRight = chosen === q.correct;
+        fbBox.innerHTML = `
+          <strong>${isRight ? 'درست جواب! شاباش' : 'غلط جواب'}</strong> —
+          درست آپشن: <strong>${labels[q.correct]}. ${q.options[q.correct]}</strong>
+          <p style="margin-top:6px;">${q.explanation || ''}</p>
+        `;
+      } else {
+        fbBox.classList.add('hidden');
+      }
+    }
+
+    function selectAnswer(optIdx) {
+      state.answers[state.currentIndex] = optIdx;
+      renderQuestion();
+    }
+
+    function prevQuestion() {
+      if (state.currentIndex > 0) {
+        state.currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (state.currentIndex < state.activeQuestions.length - 1) {
+        state.currentIndex++;
+        renderQuestion();
+      }
+    }
+
+    function submitQuiz() {
+      clearInterval(state.timerInterval);
+      const total = state.activeQuestions.length;
+      let correctCount = 0;
+      let wrongCount = 0;
+      let unansweredCount = 0;
+      const weakTopics = {};
+      const wrongStore = getWrongAnswers();
+      const wrongIdsSet = new Set(wrongStore.map(w => w.id));
+
+      state.activeQuestions.forEach((q, idx) => {
+        const ans = state.answers[idx];
+        if (ans === undefined) {
+          unansweredCount++;
+          weakTopics[q.topic || 'عمومی'] = (weakTopics[q.topic || 'عمومی'] || 0) + 1;
+        } else if (ans === q.correct) {
+          correctCount++;
+          if (state.isWrongOnlyMode) {
+            wrongIdsSet.delete(q.id);
+          }
+        } else {
+          wrongCount++;
+          weakTopics[q.topic || 'عمومی'] = (weakTopics[q.topic || 'عمومی'] || 0) + 1;
+          if (!wrongIdsSet.has(q.id)) {
+            wrongStore.push(q);
+            wrongIdsSet.add(q.id);
+          }
+        }
+      });
+
+      const updatedWrong = wrongStore.filter(item => wrongIdsSet.has(item.id));
+      saveWrongAnswers(updatedWrong);
+
+      const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+      const timeSpentSec = Math.max(1, Math.round((Date.now() - state.startedAt) / 1000));
+      const studentName = document.getElementById('studentNameInput').value.trim() || 'طالب علم';
+
+      const record = {
+        id: 'res_' + Date.now(),
+        date: new Date().toLocaleDateString('en-CA'),
+        studentName,
+        class: state.isWrongOnlyMode ? 'مختلف جماعتیں' : state.selectedClass,
+        subject: state.isWrongOnlyMode ? 'Wrong Answers' : state.selectedSubject,
+        medium: state.selectedMedium,
+        score: correctCount,
+        total,
+        percent,
+        correctCount,
+        wrongCount,
+        unansweredCount,
+        timeSpentSec
+      };
+
+      const history = getResults();
+      history.unshift(record);
+      localStorage.setItem(STORAGE_KEYS.RESULTS, JSON.stringify(history));
+
+      renderResultView(record, weakTopics);
+      switchView('result');
+    }
+
+    function renderResultView(record, weakTopics) {
+      const labels = ['A', 'B', 'C', 'D'];
+      document.getElementById('resultSummaryInfo').innerHTML = `
+        <div class="card" style="margin:0; box-shadow:none;">
+          <p><strong>طالب علم:</strong> ${record.studentName}</p>
+          <p><strong>جماعت:</strong> ${record.class}</p>
+          <p><strong>مضمون / میڈیم:</strong> ${record.subject} (${record.medium})</p>
+          <p><strong>وقت:</strong> ${record.timeSpentSec} سیکنڈ</p>
+        </div>
+        <div class="card" style="margin:0; box-shadow:none;">
+          <p><strong>حاصل کردہ نمبر:</strong> ${record.score} / ${record.total}</p>
+          <p><strong style="color:var(--success);">درست جوابات:</strong> ${record.correctCount}</p>
+          <p><strong style="color:var(--danger);">غلط جوابات:</strong> ${record.wrongCount}</p>
+          <p><strong>غیر حل شدہ:</strong> ${record.unansweredCount}</p>
+        </div>
+      `;
+
+      document.getElementById('resultPercentLabel').textContent = `${record.percent}%`;
+      document.getElementById('resultPercentBar').style.width = `${record.percent}%`;
+
+      const weakEntries = Object.entries(weakTopics);
+      const weakBox = document.getElementById('weakAreasBox');
+      if (weakEntries.length === 0) {
+        weakBox.innerHTML = '<strong>بہترین کارکردگی!</strong> کسی خاص موضوع میں کمزوری سامنے نہیں آئی۔';
+      } else {
+        weakBox.innerHTML = `<strong>کمزور موضوعات (مزید مشق کی ضرورت):</strong> ` +
+          weakEntries.map(([t, c]) => `<span class="badge badge-danger">${t} (${c})</span>`).join(' ');
+      }
+
+      const listEl = document.getElementById('resultDetailsList');
+      listEl.innerHTML = '';
+      state.activeQuestions.forEach((q, idx) => {
+        const userAns = state.answers[idx];
+        const isCorrect = userAns === q.correct;
+        const item = document.createElement('div');
+        item.className = 'card';
+        item.style.borderInlineStart = `5px solid ${isCorrect ? 'var(--success)' : 'var(--danger)'}`;
+        item.innerHTML = `
+          <p><strong>سوال ${idx + 1}:</strong> ${q.question}</p>
+          <p style="font-size:0.9rem;">آپ کا جواب: <strong>${userAns !== undefined ? `${labels[userAns]}. ${q.options[userAns]}` : 'غیر حل شدہ'}</strong></p>
+          <p style="font-size:0.9rem; color:var(--success);">درست جواب: <strong>${labels[q.correct]}. ${q.options[q.correct]}</strong></p>
+          <p style="font-size:0.86rem; color:var(--muted); margin-top:4px;">${q.explanation || ''}</p>
+        `;
+        listEl.appendChild(item);
+      });
+    }
+
+    function renderWrongAnswersView() {
+      const list = getWrongAnswers();
+      const box = document.getElementById('wrongListContainer');
+      box.innerHTML = '';
+      if (list.length === 0) {
+        box.innerHTML = '<p>ابھی کوئی غلط سوال موجود نہیں ہے۔</p>';
+        return;
+      }
+      const labels = ['A', 'B', 'C', 'D'];
+      list.forEach((q, idx) => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <span class="badge">${q.class}</span>
+          <span class="badge">${q.subject}</span>
+          <span class="badge badge-warn">${q.topic || ''}</span>
+          <p style="margin-top:8px;"><strong>${idx + 1}. ${q.question}</strong></p>
+          <p style="color:var(--success); font-size:0.9rem;">درست جواب: ${labels[q.correct]}. ${q.options[q.correct]}</p>
+          <p style="color:var(--muted); font-size:0.86rem;">${q.explanation || ''}</p>
+        `;
+        box.appendChild(div);
+      });
+    }
+
+    function clearWrongAnswers() {
+      saveWrongAnswers([]);
+      renderWrongAnswersView();
+    }
+
+    function renderStudentDashboard() {
+      const results = getResults();
+      const totalTests = results.length;
+      const bestScore = totalTests ? Math.max(...results.map(r => r.percent)) : 0;
+      const avgScore = totalTests
+        ? Math.round(results.reduce((sum, r) => sum + r.percent, 0) / totalTests)
+        : 0;
+      const wrongCount = getWrongAnswers().length;
+
+      document.getElementById('studentStatsCards').innerHTML = `
+        <div class="card" style="margin:0; text-align:center;"><h3>${totalTests}</h3><p>مکمل ٹیسٹ</p></div>
+        <div class="card" style="margin:0; text-align:center;"><h3>${bestScore}%</h3><p>بہترین اسکور</p></div>
+        <div class="card" style="margin:0; text-align:center;"><h3>${avgScore}%</h3><p>اوسط کارکردگی</p></div>
+        <div class="card" style="margin:0; text-align:center;"><h3>${wrongCount}</h3><p>غلط سوالات</p></div>
+      `;
+
+      const tbody = document.getElementById('historyTableBody');
+      tbody.innerHTML = '';
+      if (results.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;">ابھی کوئی ٹیسٹ ریکارڈ موجود نہیں ہے۔</td></tr>';
+        return;
+      }
+      results.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${r.date}</td>
+          <td>${r.studentName}</td>
+          <td>${r.class}</td>
+          <td>${r.subject}</td>
+          <td>${r.medium}</td>
+          <td>${r.score}/${r.total}</td>
+          <td><strong>${r.percent}%</strong></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // ================= ADMIN FUNCTIONS =================
+    function unlockAdmin() {
+      const pin = document.getElementById('adminPinInput').value.trim();
+      if (pin === '1234') {
+        document.getElementById('adminLockCard').classList.add('hidden');
+        document.getElementById('adminWorkspace').classList.remove('hidden');
+        populateAdminSelectors();
+      } else {
+        alert('غلط پاس کوڈ! ڈیفالٹ پاس کوڈ 1234 ہے۔');
+      }
+    }
+
+    function populateAdminSelectors() {
+      const classes = getClasses();
+      const subjects = getSubjects();
+      const cSel = document.getElementById('admClass');
+      const sSel = document.getElementById('admSubject');
+
+      cSel.innerHTML = classes.map(c => `<option value="${c}">${c}</option>`).join('');
+      sSel.innerHTML = subjects.map(s => `<option value="${s.id}">${s.ur} (${s.en})</option>`).join('');
+
+      renderAdminQuestionsTable();
+    }
+
+    function addNewClass() {
+      const val = document.getElementById('newClassInput').value.trim();
+      if (!val) return;
+      const classes = getClasses();
+      if (!classes.includes(val)) {
+        classes.push(val);
+        localStorage.setItem(STORAGE_KEYS.CLASSES, JSON.stringify(classes));
+        document.getElementById('newClassInput').value = '';
+        renderHomeSelectors();
+        populateAdminSelectors();
+        alert('نئی جماعت شامل ہو گئی۔');
+      }
+    }
+
+    function addNewSubject() {
+      const val = document.getElementById('newSubjectInput').value.trim();
+      if (!val) return;
+      const subjects = getSubjects();
+      const id = val.toLowerCase().replace(/[^a-z0-9]+/g, '_') + '_' + Date.now().toString().slice(-3);
+      subjects.push({ id, ur: val, en: val, desc: 'نیا شامل کردہ مضمون' });
+      localStorage.setItem(STORAGE_KEYS.SUBJECTS, JSON.stringify(subjects));
+      document.getElementById('newSubjectInput').value = '';
+      renderHomeSelectors();
+      populateAdminSelectors();
+      alert('نیا مضمون شامل ہو گیا۔');
+    }
+
+    function addMcqFromAdmin() {
+      const qText = document.getElementById('admQuestion').value.trim();
+      const oA = document.getElementById('admOptA').value.trim();
+      const oB = document.getElementById('admOptB').value.trim();
+      const oC = document.getElementById('admOptC').value.trim();
+      const oD = document.getElementById('admOptD').value.trim();
+
+      if (!qText || !oA || !oB || !oC || !oD) {
+        alert('براہ کرم سوال اور چاروں اختیارات مکمل درج کریں۔');
+        return;
+      }
+
+      const newQ = {
+        id: 'custom_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+        class: document.getElementById('admClass').value,
+        subject: document.getElementById('admSubject').value,
+        medium: document.getElementById('admMedium').value,
+        topic: document.getElementById('admTopic').value.trim() || 'عمومی موضوع',
+        slo: document.getElementById('admSlo').value.trim() || 'SLO-CUSTOM',
+        difficulty: document.getElementById('admDiff').value,
+        question: qText,
+        options: [oA, oB, oC, oD],
+        correct: parseInt(document.getElementById('admCorrect').value, 10),
+        explanation: document.getElementById('admExplanation').value.trim() || ''
+      };
+
+      const all = getQuestions();
+      all.unshift(newQ);
+      saveQuestions(all);
+
+      document.getElementById('admQuestion').value = '';
+      document.getElementById('admOptA').value = '';
+      document.getElementById('admOptB').value = '';
+      document.getElementById('admOptC').value = '';
+      document.getElementById('admOptD').value = '';
+      document.getElementById('admExplanation').value = '';
+
+      renderHomeSelectors();
+      renderAdminQuestionsTable();
+      alert('سوال کامیابی سے شامل کر دیا گیا۔');
+    }
+
+    function importCsvMcqs() {
+      const raw = document.getElementById('csvImportArea').value.trim();
+      if (!raw) {
+        alert('CSV ڈیٹا درج کریں۔');
+        return;
+      }
+      const lines = raw.split(/\r?\n/).filter(l => l.trim());
+      const all = getQuestions();
+      let added = 0;
+
+      lines.forEach((line, i) => {
+        const parts = line.split(',');
+        if (parts.length >= 12) {
+          const correctIdx = parseInt(parts[11].trim(), 10);
+          all.unshift({
+            id: 'csv_' + Date.now() + '_' + i,
+            class: parts[0].trim(),
+            subject: parts[1].trim(),
+            medium: parts[2].trim() === 'english' ? 'english' : 'urdu',
+            topic: parts[3].trim() || 'عمومی',
+            slo: parts[4].trim() || 'SLO',
+            difficulty: parts[5].trim() || 'Medium',
+            question: parts[6].trim(),
+            options: [parts[7].trim(), parts[8].trim(), parts[9].trim(), parts[10].trim()],
+            correct: [0, 1, 2, 3].includes(correctIdx) ? correctIdx : 0,
+            explanation: (parts[12] || '').trim()
+          });
+          added++;
+        }
+      });
+
+      saveQuestions(all);
+      renderHomeSelectors();
+      renderAdminQuestionsTable();
+      alert(`${added} سوالات امپورٹ ہو گئے۔`);
+    }
+
+    function deleteQuestion(id) {
+      const filtered = getQuestions().filter(q => q.id !== id);
+      saveQuestions(filtered);
+      renderHomeSelectors();
+      renderAdminQuestionsTable();
+    }
+
+    function renderAdminQuestionsTable() {
+      const list = getQuestions();
+      document.getElementById('adminTotalQuestionsCount').textContent = list.length;
+      const tbody = document.getElementById('adminQuestionsBody');
+      tbody.innerHTML = '';
+
+      list.slice(0, 100).forEach((q, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${idx + 1}</td>
+          <td>${q.class}</td>
+          <td>${q.subject}</td>
+          <td>${q.medium}</td>
+          <td>${q.question}</td>
+          <td><button class="btn btn-danger btn-sm" onclick="deleteQuestion('${q.id}')">حذف</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function exportBackupJson() {
+      const payload = {
+        exportedAt: new Date().toISOString(),
+        classes: getClasses(),
+        subjects: getSubjects(),
+        questions: getQuestions(),
+        results: getResults()
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'urdu-ka-shajra-backup.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function resetAllData() {
+      if (!confirm('کیا آپ واقعی تمام کسٹم سوالات اور نتائج ری سیٹ کر کے ڈیفالٹ ڈیٹا بحال کرنا چاہتے ہیں؟')) return;
+      localStorage.removeItem(STORAGE_KEYS.QUESTIONS);
+      localStorage.removeItem(STORAGE_KEYS.RESULTS);
+      localStorage.removeItem(STORAGE_KEYS.WRONG);
+      localStorage.removeItem(STORAGE_KEYS.CLASSES);
+      localStorage.removeItem(STORAGE_KEYS.SUBJECTS);
+      updateBadges();
+      renderHomeSelectors();
+      populateAdminSelectors();
+      alert('ڈیفالٹ ڈیٹا بحال ہو گیا۔');
+    }
+
+    // Initialize App
+    (function init() {
+      getClasses();
+      getSubjects();
+      getQuestions();
+      updateBadges();
+      applyDirectionByMedium(state.selectedMedium);
+      renderHomeSelectors();
+    })();
+  </script>
+</body>
+</html>
